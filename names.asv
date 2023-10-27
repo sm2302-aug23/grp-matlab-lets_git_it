@@ -25,4 +25,4 @@ set(gca, 'FontSize', 10, 'LineWidth', 1)
 grid on
 
 % a e i 
-% b f h l q z s y 
+% b f 
