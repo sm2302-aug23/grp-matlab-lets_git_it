@@ -44,6 +44,7 @@ xx = spline(t, x, tt);
 yy = spline(t, y, tt);
 
 % Plot settings
+% letter i 
 figure(1)
 plot(xx, yy, 'k', 'LineWidth', 1.5) % plot spline
 hold on
