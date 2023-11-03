@@ -1,5 +1,6 @@
  % Define data points for x and y coordinates
 % Define data points for x and y coordinates
+%% letter D
 x = [3 1.75 0.9 0 0.5 1.5 3.25 4.25 4.25 3 3.75 6.00];
 y = [4 1.60 0.5 0 1.0 0.5 0.50 2.25 4.00 4 3.25 4.25];
 
@@ -28,7 +29,7 @@ grid on
 % b f h l q z s y 
 
 
-
+%% letter i
 % Define data points for x and y coordinates
 x = [2.5 3 2.875 3.125 3.5];
 y = [1 2 0.75 0.25 1];
@@ -43,8 +44,7 @@ tt = 0:0.01:n-1; % More dense coordinate tt for spline interpolation
 xx = spline(t, x, tt);
 yy = spline(t, y, tt);
 
-% Plot settings
-% letter i 
+% Plot settings 
 figure(1)
 plot(xx, yy, 'k', 'LineWidth', 1.5) % plot spline
 hold on
