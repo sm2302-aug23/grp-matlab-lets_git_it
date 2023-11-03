@@ -31,6 +31,7 @@ grid on
 
 %% letter i
 % Define data points for x and y coordinates
+
 x = [2.5 3 2.875 3.125 3.5];
 y = [1 2 0.75 0.25 1];
 dot_x = 2.9;
@@ -45,7 +46,7 @@ xx = spline(t, x, tt);
 yy = spline(t, y, tt);
 
 % Plot settings 
-figure(1)
+figure(2)
 plot(xx, yy, 'k', 'LineWidth', 1.5) % plot spline
 hold on
 plot(x, y, 'bo', 'MarkerFaceColor', 'b') % plot data points
