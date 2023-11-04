@@ -1,9 +1,9 @@
-| Student ID \# | Name            |
-|---------------|-----------------|
-| 22B2046       | Syafiqah Raddin |
-| 22B2125       | Izznie Adanan   |
-| 22B2149       | Aqilah Rafidi   |
-| 22B9014       | Bibi Junaidi    |
+| Student ID \# | Name            | Nickname |
+|---------------|-----------------|----------|
+| 22B2046       | Syafiqah Raddin | Syaf     |
+| 22B2125       | Izznie Adanan   | Izz      |
+| 22B2149       | Aqilah Rafidi   | Qila     |  
+| 22B9014       | Bibi Junaidi    | Bibi     |
 
 
 
