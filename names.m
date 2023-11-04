@@ -52,7 +52,7 @@ ylabel('y')
 set(gca, 'FontSize', 10, 'LineWidth', 1)
 grid on
 
-%% Letter I
+%% Letter i
 % Define data points for x and y coordinates
 x = [2.75 3.25 3.375 3.125 3.375 3.75];
 y = [2.5 3 3.25 2.25 1.75 2.5];
