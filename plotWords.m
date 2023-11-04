@@ -1,4 +1,4 @@
-function plotWords(Name)
+function plotWords()
 % Define a comtainer map to store letters and their instructions 
 letterMap = containers.Map();
 

@@ -56,7 +56,7 @@ grid on
 % Define data points for x and y coordinates
 x = [2.75 3.25 3.375 3.125 3.375 3.75];
 y = [2.5 3 3.25 2.25 1.75 2.5];
-dot_x = 6.6;
+dot_x = 3.375;
 dot_y = 3.625; 
 
 n = length(x);
@@ -155,9 +155,10 @@ hold on
 plot(x, y, 'bo', 'MarkerFaceColor', 'b') % plot data points
 axis([-0.2 6 -0.2 4.5])
 grid on
-title('Spline Interpolation of Cursive Letter D')
+title('Spline Interpolation of Cursive Letter ')
 xlabel('x')
 ylabel('y')
 set(gca, 'FontSize', 10, 'LineWidth', 1)
 grid on
 
+%% Names 
