@@ -12,6 +12,7 @@
 ### 1. Graph paper transcription
 
 We first did a rough sketch of our nicknames in cursive on a square plot.
+We also took note of the specific coordinates to be plotted. 
 When we connect the cursive letters to plot our names in the script file, we make sure to start and end with the same y value ( y = 2.5).
 This makes the name aligned.
 We can observe this from the graph plot below:   
