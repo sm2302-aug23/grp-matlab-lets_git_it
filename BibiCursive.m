@@ -55,7 +55,10 @@ xlabel('x')
 x = [0.5 1.125 1.75 1.625 1.25 1.75 2 1.375 1.125 2.75];
 y = [2.5 3.25 4.25 5.25 2.5 3.25 2 1.5 2 2.5];
 
+% Define the amount of shift to the right (offset)
 x_shift = 3.25;
+
+% Apply the offset to x coordinates (horizontal) 
 x = x + x_shift;
 
 n = length(x);
@@ -86,8 +89,11 @@ y = [2.5 3 3.25 2.25 1.75 2.5];
 dot_x = 3.375;
 dot_y = 3.625; 
 
+% Define the amount of shift to the right (offset)
 x_shift = 3.25;
-x = x + x_shift
+
+% Apply the offset to x coordinates (horizontal) 
+x = x + x_shift;
 
 n = length(x);
 t = 0:n-1; % Parametric coordinate t
