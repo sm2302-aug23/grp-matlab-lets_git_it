@@ -18,12 +18,19 @@ Additionally, we took note of the exact coordinates from the rough sketch to be 
 Furthermore, each cursive letter starts and ends with the same y value which in this case is y = 2.5. 
 This is to make sure when we plot our names, the word would be consistent and alligned.
 
-We can observe this from the rough sketch of the graph plot below:
+We can observe this from the rough sketch of the graph plot below in figure 1 and figure 2:
 
 
 ![](pictureone.jpeg)
+*Figure_1*
+
+
 ![](picturetwo.jpeg)
-   
+*Figure_2*
+
+
+From our rough sketch we can easily plot this in matlab, below is an example:
+
 
 ### 2. 
 
