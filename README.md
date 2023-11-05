@@ -42,7 +42,33 @@ below is an example for letter f (Figure 3):
 
 ### Digital Reconstruction
 
-In this section, 
+In this section, to better understand the flow of our code, we referred to the example provided(D cursive)
+and we then plotted individual letters instead of our full nicknames.
+Afterwards, we added section break for each name so we can deal with it individually.  
+
+When computing a name, to make it less confusing and also avoiding the plot (X, Y) to overlap with other letters in the graph plot, 
+we let (X, Y) to be (X1, Y1), (X2, Y2), ..., (Xn, Yn) for each letters. 
+As an example, for the name qila, the letter q would be (X1, Y1) and then letter i would be (X2, Y2) and so on. 
+
+Moreover, to make sure each name will come out as different graph plots (different figures)
+instead of all the names running on one graph plot (one figure), we changed the title, figure numbers
+and also the (X, Y) axis so it can show better.Basically, each member is named figure 1, figure 2 and more.
+This is the under the plot settings in the code. 
+
+```
+```
+
+
+1. TO understand it better, we first plotted individual letters instead of our full name
+2. section break to deal with each name 
+3. to make it less confusing in coding, we used x1, y1, x2, y2, ... for each name 
+[basically, for the name qila: x1, y1 and then bibi: x2, y2]
+4. to make sure each name comes out as different graph plots instead of one 
+[changed in the plot settings for each name]
+(basically figure 1, figure 2,...) 
+so it doesnt overlap with each other in ONE FIGURE 
+5. used the reference of the example provided ( the D cursive) 
+
 
 
 ### Creation Of The Plotword Function 
