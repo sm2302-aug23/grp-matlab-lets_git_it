@@ -32,7 +32,9 @@ We can observe this from the rough sketch of the graph plot below in figure 1 an
 ![](picturetwo.jpeg)
 
 
-From our rough sketch we can easily plot this in matlab, below is an example (Figure 3):
+From our rough sketch we can easily plot this in matlab, 
+
+below is an example for letter f (Figure 3):
 
 #### *Figure 3*
 ![](untitled1.png)
