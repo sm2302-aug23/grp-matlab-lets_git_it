@@ -9,7 +9,11 @@
 | 22B2149       | Aqilah Rafidi   | Qila     |  
 | 22B9014       | Bibi Junaidi    | Bibi     |
 
-### 1) Graph paper transcription
+## Table of Contents
+
+1.  [Graph Paper Transcription](#graph-paper-transcription)
+
+### Graph Paper Transcription
 
 Initially, we did a rough sketch of our nicknames in cursive on a square plot. 
 We selected only 9 letters in this task which are: a, b, f, i, l, q, s, y, z.
@@ -28,8 +32,10 @@ We can observe this from the rough sketch of the graph plot below in figure 1 an
 ![](picturetwo.jpeg)
 
 
-From our rough sketch we can easily plot this in matlab, below is an example:
+From our rough sketch we can easily plot this in matlab, below is an example (Figure 3):
 
+#### *Figure 3*
+![](untitled1.png)
 
 ### 2. 
 

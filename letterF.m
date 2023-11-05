@@ -16,9 +16,9 @@ figure(1)
 plot(xx, yy, 'k', 'LineWidth', 1.5) % plot spline
 hold on
 plot(x, y, 'bo', 'MarkerFaceColor', 'b') % plot data points
-axis([-0.2 6 -0.2 4.5])
+axis([-2 4 -0.2 5.0])
 grid on
-title('Spline Interpolation of Cursive Letter F')
+title('Spline Interpolation of Cursive Letter f')
 xlabel('x')
 ylabel('y')
 set(gca, 'FontSize', 10, 'LineWidth', 1)
