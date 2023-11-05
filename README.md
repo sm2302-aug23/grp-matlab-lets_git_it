@@ -25,7 +25,7 @@ This is to make sure when we plot our names, the word would be consistent and al
 We can observe this from the rough sketch of the graph plot below in figure 1 and figure 2:
 
 #### *Figure 1*
-![](pictureone.jpeg)
+![](pictureone.jpeg | 300x300)
 
 
 #### *Figure 2*
@@ -33,7 +33,6 @@ We can observe this from the rough sketch of the graph plot below in figure 1 an
 
 
 From our rough sketch we can easily plot this in matlab, 
-
 below is an example for letter f (Figure 3):
 
 #### *Figure 3*
