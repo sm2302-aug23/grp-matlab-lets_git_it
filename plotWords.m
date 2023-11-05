@@ -17,6 +17,7 @@ letterMap('z') = [0.25 2.5; 1.25 3; 1 2.5; 0.75 2; 1.5 2; 0.5 0.5; 0.75 1;
 currentPosition = [0 0]; 
 allX = [];
 allY =[];
+dotPosition = [0 0];
 
 % Loop through the letters in your name and draw 
 for i = 1:length(Name)
@@ -33,19 +34,17 @@ for i = 1:length(Name)
         end
 
         if letter == 'i'
-            i_indices = find(Name == 'i');
-
-            for i_index = i_indices 
             [~, highestPointIndex] = max(instructions(:,2));
             dotPosition = instructions(highestPointIndex, :);
             dotPosition(1) = dotPosition(1) + 0.1;
             dotPosition(2) = dotPosition(2) + 0.4;
-            plot(dotPosition(1), dotPosition(2), 'bo', 'MarkerSize', 5, 'MarkerFaceColor', 'b');
             end
     else
         fprintf('Letter "%s" is not defined.\n', letter);
     end
 end 
+
+ plot(dotPosition(1), dotPosition(2), 'bo', 'MarkerSize', 5, 'MarkerFaceColor', 'b');
 
 t = 1:0.01:length(allX);
 interpolatedX = interp1(allX, t, 'spline');
