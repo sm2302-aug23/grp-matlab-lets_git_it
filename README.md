@@ -20,11 +20,11 @@ This is to make sure when we plot our names, the word would be consistent and al
 
 We can observe this from the rough sketch of the graph plot below in figure 1 and figure 2:
 
-# *Figure 1*
+#### *Figure 1*
 ![](pictureone.jpeg)
 
 
-#*Figure 2*
+#### *Figure 2*
 ![](picturetwo.jpeg)
 
 
