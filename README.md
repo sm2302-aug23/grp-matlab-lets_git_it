@@ -22,11 +22,11 @@ We can observe this from the rough sketch of the graph plot below in figure 1 an
 
 
 ![](pictureone.jpeg)
-*Figure_1*
+## *Figure 1*
 
 
 ![](picturetwo.jpeg)
-*Figure_2*
+## *Figure 2*
 
 
 From our rough sketch we can easily plot this in matlab, below is an example:
