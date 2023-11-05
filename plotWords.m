@@ -12,7 +12,7 @@ letterMap('b') = [0.5 2.5; 1.125 3.25; 1.75 4.25; 1.625 5.25; 1.25 2.5; 1.75 3.2
 letterMap('i') = [2.75 2.5; 3.25 3; 3.375 3.25; 3.125 2.25; 3.375 1.75; 
     3.75 2.5];   
 letterMap('z') = [0.25 2.5; 1.25 3; 1 2.5; 0.75 2; 1.5 2; 0.5 0.5; 0.75 1;
-    1.5 1.75; 2.25 2.5]
+    1.5 1.75; 2.25 2.5];
 
 currentPosition = [0 0]; 
 allX = [];
@@ -31,14 +31,21 @@ for i = 1:length(Name)
         if i < length(Name)
         currentPosition(1) = max(instructions(:,1)), + 0.1;
         end
+
+        if letter == 'i'
+            i_indices = find(Name == 'i');
+
+            for i_index = i_indices 
+            [~, highestPointIndex] = max(instructions(:,2));
+            dotPosition = instructions(highestPointIndex, :);
+            dotPosition(1) = dotPosition(1) + 0.1;
+            dotPosition(2) = dotPosition(2) + 0.4;
+            plot(dotPosition(1), dotPosition(2), 'bo', 'MarkerSize', 5, 'MarkerFaceColor', 'b');
+            end
     else
         fprintf('Letter "%s" is not defined.\n', letter);
     end
 end 
-
-dotPosition = calculateDotPosition(allX, allY);
-
-plot(dotPosition(1), dotPosition(2), 'bo', 'MarkerSize', 5, 'MarkerFaceColor', 'b');
 
 t = 1:0.01:length(allX);
 interpolatedX = interp1(allX, t, 'spline');
@@ -54,11 +61,4 @@ xlabel('x');
 ylabel('y');
 end 
 
-function dotPosition = calculateDotPosition(allX, allY)
-
-iPath = [allX, allY];
-
-[~, highestPointIndex] = min(iPath(:,2));
-dotPosition = iPath(highestPointIndex, :);
-end
 
