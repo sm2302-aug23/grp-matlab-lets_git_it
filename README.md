@@ -18,13 +18,14 @@
 ### Graph Paper Transcription
 
 Initially, we did a rough sketch of our nicknames in cursive on a square plot. 
-We selected only 9 letters in this task which are: a, b, f, i, l, q, s, y, z.
+We selected only 9 letters in this task, which are: a, b, f, i, l, q, s, y, and z.
 
-Additionally, we took note of the exact coordinates from the rough sketch to be plotted on the square plot.
-Furthermore, each cursive letter starts and ends with the same y value which in this case is y = 2.5. 
-This is to make sure when we plot our names, the word would be consistent and alligned.
+Additionally, we noted the exact coordinates from the rough sketch to be plotted on the square plot.
+Furthermore, each cursive letter starts and ends with the same y value, which in this case is y = 2.5. 
+This is to make sure when we plot our names, the letters would connect the way a cursive word would. 
+A reminder that for what we have done so far, the coordinates are only important for its dimension for now, and we have not yet taken into consideration where the position of the letters will be in the words (which will be handled in the later tasks) 
 
-We can observe this from the rough sketch of the graph plot below in figure 1 and figure 2:
+We can observe this from the rough sketch of the graph plot below in Figure 1 and Figure 2:
 
 #### *Figure 1*
 ![](pictureone.jpeg)
@@ -34,8 +35,8 @@ We can observe this from the rough sketch of the graph plot below in figure 1 an
 ![](picturetwo.jpeg)
 
 
-From our rough sketch we can easily plot this in matlab, 
-below is an example for letter f (Figure 3):
+From our rough sketch, we can easily plot this in Matlab, 
+below is an example of letter f (Figure 3):
 
 #### *Figure 3*
 ![](untitled1.png)
@@ -44,16 +45,16 @@ below is an example for letter f (Figure 3):
 
 In this section, to better understand the flow of our code, we referred to the example provided(D cursive)
 and we then plotted individual letters instead of our full nicknames.
-Afterwards, we added section break for each name so we can deal with it individually.  
+Afterwards, we added a section break for each name to deal with it individually.  
 
 When computing a name, to make it less confusing and also avoiding the plot (X, Y) to overlap with other letters in the graph plot, 
 we let (X, Y) to be (X1, Y1), (X2, Y2), ..., (Xn, Yn) for each letters. 
-As an example, for the name qila, the letter q would be (X1, Y1) and then letter i would be (X2, Y2) and so on. 
+For example, for the name qila, the letter q would be (X1, Y1) and then the letter i would be (X2, Y2) and so on. 
 
 Moreover, to make sure each name will come out as different graph plots (different figures)
 instead of all the names running on one graph plot (one figure), we changed the title, figure numbers
-and also the (X, Y) axis so it can show better.Basically, each member is named figure 1, figure 2 and more.
-This is the under the plot settings in the code. 
+and also the (X, Y) axis so it can show better. Basically, each member is named Figure 1, figure 2 and more.
+This is under the plot settings in the code. 
 
 ```
 ```
