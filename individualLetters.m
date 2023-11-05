@@ -1,5 +1,6 @@
 % Vowels used: a, i
 % Consonants : b, f, l, q, s, y, z
+
 %% letter a 
 
 % Define data points for x and y coordinates

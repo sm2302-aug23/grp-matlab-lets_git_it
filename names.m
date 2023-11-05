@@ -1,3 +1,9 @@
+% Nicknames:
+% 1. izz (Izznie)
+% 2. qil (Aqilah)
+% 3. syaf (Syafiqah)
+% 4. Bibi (Bibi)
+
 %% izz
 % letter i 
 % Define data points for x and y coordinates
