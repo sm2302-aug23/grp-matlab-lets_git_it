@@ -179,4 +179,4 @@ For `interpolatedX` and `interpolatedY` contain the interpolated coordinates tha
 Try code on input strings `plotWords('ball')` , it will give the plot below (Figure 5):
 
 #### *Figure 5*
-![](picturethree.jpg)
+![](figurethree.png)
