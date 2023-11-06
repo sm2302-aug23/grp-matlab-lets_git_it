@@ -35,7 +35,7 @@ We can observe this from the rough sketch of the graph plot below in Figure 1 an
 ![](picturetwo.jpeg)
 
 
-From our rough sketch, we can easily plot this in Matlab, referring to the individualLetters.m file with the help of the , 
+From our rough sketch, we can easily plot this in Matlab, referring to the individualLetters.m file with the help of the Dcursive.m file given, 
 
 below is an example of letter f (Figure 3):
 
@@ -66,26 +66,89 @@ ylabel('y')
 set(gca, 'FontSize', 10, 'LineWidth', 1)
 grid on
 ```
+for each letter, the only difference is to data points for the x and y coordinates and the title in the plot settings. 
+
 #### *Figure 3*
 ![](untitled1.png)
 
 ### Digital Reconstruction
+For this task, we now try to do a MatLab script file that would plot all of our spline cursive names (as words, not letters). In this, we are using subplots to arrange each name plot to be placed in the same figure. 
 
-In this section, to better understand the flow of our code, we referred to the example provided (D cursive)
-and we then plotted individual letters instead of our full nicknames referring to the individualLetters.m file. 
+In Figure 4, you can see an example, syaf. 
 
+```c
+%% syaf
+% letter s
+x1 = [1.25 0.75 0.5 0.75 1.375 0.75 0.375 1.75];
+y1 = [3.5 3.8 3.5 3 1.625 0.875 1.5 2.5];
 
-For each letter, the only difference made is to the data points in 
+% letter y 
+x2 = [0.5 0.55 0.6 0.75 1 1.5 1.5 1.25 0.5 0.5 2.25];
+y2 = [2.5 2.55 2.6 2.75 2 2.75 1.5 0.5 0.25 1 2.5];
 
-Code explanation for names.m file 
+% Define the amount of shift to the right (offset)
+x_shift2 = 1.25;
 
-To better see each name, we used the %% function in Matlab to section break between all our nicknames.   
+% Apply the offset to x coordinates (horizontal) 
+x2 = x2 + x_shift2;
 
-When computing a name, to make it less confusing and also to avoid the plot (X, Y) to overlap with other letters in the graph plot, 
+% letter a
+x3 = [1 0.25 0.5 0.9 0.9 1 1 1 1 1.25 1.75];
+y3  = [3 2.5 1.75 2 2 2.5 3 2.5 2.25 1.75 2.5];
+
+% Define the amount of shift to the right (offset)
+x_shift3 = 3.25;
+
+% Apply the offset to x coordinates (horizontal) 
+x3 = x3 + x_shift3;
+
+% LETTER F
+% Define data points for x and y coordinates 
+x4 = [0.5 1 1.5 1.625 1.25 1 0.875 0.8125 1 1.25 1.17 0.875 1.625];
+y4 = [2.5 2.875 3.5 4.25 4.5 3.5 2.375 1.5 1.0625 1.5 2 2.375 2.5];
+
+% Define the amount of shift to the right (offset)
+x_shift4 = 4.5;
+
+% Apply the offset to x coordinates (horizontal) 
+x4 = x4 + x_shift4;
+
+% Concatenate data points
+x = [x1 x2 x3 x4];
+y = [y1 y2 y3 y4];
+
+n = length(x);
+t = 0:n-1; % Parametric coordinate t
+tt = 0:0.01:n-1; % More dense coordinate tt for spline interpolation
+
+% Compute spline interpolation
+xx = spline(t, x, tt);
+yy = spline(t, y, tt);
+
+% Plot settings
+figure(3)
+plot(xx, yy, 'k', 'LineWidth', 1.5) % plot spline
+hold on
+plot(x, y, 'bo', 'MarkerFaceColor', 'b') % plot data points
+axis([-0.2 7 -0.2 5])
+grid on
+title('Spline Interpolation of Cursive Syaf')
+xlabel('x')
+ylabel('y')
+set(gca, 'FontSize', 10, 'LineWidth', 1)
+grid on
+
+```
+#### *Figure 4*
+![](syaf.png)
+
+Code explanation for names.m file: 
+
+1. To better see each name, we used the %% function in Matlab to section break between all our nicknames.   
+2. When computing a name, to make it less confusing and also to avoid the plot (X, Y) to overlap with other letters in the graph plot, 
 we let (X, Y) be (X1, Y1), (X2, Y2), ..., (Xn, Yn) for each letter in each name.  
 For example, for the name qila, the letter q would be (X1, Y1) and then the letter i would be (X2, Y2) and so on. 
-
-Moreover, to make sure each name will come out as different graph plots (different figures)
+3. Moreover, to make sure each name will come out as different graph plots (different figures)
 instead of all the names running on one graph plot (one figure), we changed the title, figure numbers
 and also the (X, Y) axis so it can show better. Basically, each member is named Figure 1, figure 2 and more.
 This is under the `plot settings` in the code. 
@@ -113,7 +176,7 @@ For `interpolatedX` and `interpolatedY` contain the interpolated coordinates tha
 8. Plot the data using `interpolatedX` and interpolatedY`.
 9. Customizing the appearance of the plot to ensure equal scaling on both axes and labelling the plotted data.
 
-Try code on input strings `plotWords('ball')` , it will give the plot below (Figure 4):
+Try code on input strings `plotWords('ball')` , it will give the plot below (Figure 5):
 
-#### *Figure 4*
+#### *Figure 5*
 ![](picturethree.jpg)
