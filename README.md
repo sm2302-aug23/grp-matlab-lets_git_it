@@ -36,6 +36,7 @@ We can observe this from the rough sketch of the graph plot below in Figure 1 an
 
 
 From our rough sketch, we can easily plot this in Matlab, 
+
 below is an example of letter f (Figure 3):
 
 #### *Figure 3*
@@ -43,7 +44,7 @@ below is an example of letter f (Figure 3):
 
 ### Digital Reconstruction
 
-In this section, to better understand the flow of our code, we referred to the example provided(D cursive)
+In this section, to better understand the flow of our code, we referred to the example provided (D cursive)
 and we then plotted individual letters instead of our full nicknames.
 Afterwards, we added a section break for each name to deal with it individually.  
 
@@ -54,7 +55,7 @@ For example, for the name qila, the letter q would be (X1, Y1) and then the lett
 Moreover, to make sure each name will come out as different graph plots (different figures)
 instead of all the names running on one graph plot (one figure), we changed the title, figure numbers
 and also the (X, Y) axis so it can show better. Basically, each member is named Figure 1, figure 2 and more.
-This is under the plot settings in the code. 
+This is under the `plot settings` in the code. 
 
 ```
 ```
