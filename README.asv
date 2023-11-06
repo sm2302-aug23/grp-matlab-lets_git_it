@@ -90,11 +90,5 @@ Code explaination:
 5. Using `for-loop` to loop through the letters and draw.
 6. For special character in our case is 'i', we use ` `
 7. ` t = 1:0.01:length(allX); ` to creates a time vector, `t` with ranging from 1 to the length of `allX` with a step size of 0.01. This vector is used as the time or independent variable for the interpolation.
-For `interpolatedX` and `interpolatedY` contain the interpolated coordinates that can be used for plotting a smooth curve that represents the shape formed by the letters.
-8. Plot the data using `interpolatedX` and interpolatedY`.
-9. Customizing the appearance of the plot to ensure equal scaling on both axes and labelling the plotted data.
-
-Try code on input strings `plotWords('ball')` , it will give as the plot below (Figure 4):
-
-#### *Figure 4*
-![](picturethree.jpg)
+For `interpolatedX` and `interpolatedY` contain the interpolated coordinates that can be u
+8.  
