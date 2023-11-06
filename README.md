@@ -40,7 +40,7 @@ From our rough sketch, we can easily plot this in Matlab,
 below is an example of letter f (Figure 3):
 
 #### *Figure 3*
-![](untitled1.png) ![](fsketch.jpg)
+![](untitled1.png) 
 
 ### Digital Reconstruction
 
