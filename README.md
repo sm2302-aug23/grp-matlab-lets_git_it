@@ -23,7 +23,7 @@ We selected only 9 letters in this task, which are: a, b, f, i, l, q, s, y, and 
 Additionally, we noted the exact coordinates from the rough sketch to be plotted on the square plot.
 Furthermore, each cursive letter starts and ends with the same y value, which in this case is y = 2.5. 
 This is to make sure when we plot our names, the letters would connect the way a cursive word would. 
-A reminder that for what we have done so far, the coordinates are only important for its dimension for now, and we have not yet taken into consideration where the position of the letters will be in the words (which will be handled in the later tasks) 
+This a reminder that for what we have done so far, the coordinates are only important for their dimension for now, and we have not yet considered where the position of the letters will be in words (which will be handled in the later tasks).
 
 We can observe this from the rough sketch of the graph plot below in Figure 1 and Figure 2:
 
@@ -35,21 +35,54 @@ We can observe this from the rough sketch of the graph plot below in Figure 1 an
 ![](picturetwo.jpeg)
 
 
-From our rough sketch, we can easily plot this in Matlab, 
+From our rough sketch, we can easily plot this in Matlab, referring to the individualLetters.m file with the help of the , 
 
 below is an example of letter f (Figure 3):
 
+```r
+%% LETTER F
+% Define data points for x and y coordinates 
+x = [0.5 1 1.5 1.625 1.25 1 0.875 0.8125 1 1.25 1.17 0.875 1.625];
+y = [2.5 2.875 3.5 4.25 4.5 3.5 2.375 1.5 1.0625 1.5 2 2.375 2.5];
+
+n = length(x);
+t = 0:n-1; % Parametric coordinate t
+tt = 0:0.01:n-1; % More dense coordinate tt for spline interpolation
+
+% Compute spline interpolation
+xx = spline(t, x, tt);
+yy = spline(t, y, tt);
+
+% Plot settings
+figure(1)
+plot(xx, yy, 'k', 'LineWidth', 1.5) % plot spline
+hold on
+plot(x, y, 'bo', 'MarkerFaceColor', 'b') % plot data points
+axis([-0.2 6 -0.2 4.5])
+grid on
+title('Spline Interpolation of Cursive Letter F')
+xlabel('x')
+ylabel('y')
+set(gca, 'FontSize', 10, 'LineWidth', 1)
+grid on
+```
 #### *Figure 3*
 ![](untitled1.png)
 
 ### Digital Reconstruction
 
 In this section, to better understand the flow of our code, we referred to the example provided (D cursive)
-and we then plotted individual letters instead of our full nicknames.
-Afterwards, we added a section break for each name to deal with it individually.  
+and we then plotted individual letters instead of our full nicknames referring to the individualLetters.m file. 
 
-When computing a name, to make it less confusing and also avoiding the plot (X, Y) to overlap with other letters in the graph plot, 
-we let (X, Y) to be (X1, Y1), (X2, Y2), ..., (Xn, Yn) for each letters. 
+
+For each letter, the only difference made is to the data points in 
+
+Code explanation for names.m file 
+
+To better see each name, we used the %% function in Matlab to section break between all our nicknames.   
+
+When computing a name, to make it less confusing and also to avoid the plot (X, Y) to overlap with other letters in the graph plot, 
+we let (X, Y) be (X1, Y1), (X2, Y2), ..., (Xn, Yn) for each letter in each name.  
 For example, for the name qila, the letter q would be (X1, Y1) and then the letter i would be (X2, Y2) and so on. 
 
 Moreover, to make sure each name will come out as different graph plots (different figures)
@@ -57,32 +90,30 @@ instead of all the names running on one graph plot (one figure), we changed the 
 and also the (X, Y) axis so it can show better. Basically, each member is named Figure 1, figure 2 and more.
 This is under the `plot settings` in the code. 
 
-```
-```
 
 ### Creation Of The Plotword Function 
 
-Lastly, for this section is to develop a script function called 'plotWord.m'. For this part we have to create a  method for combining letters into cursive words.
-For example, for our letters we have a, b, f, i, l then it will be 'lab', 'ball' and more.
-For this function script we consider to make useful of the 'containers.map' to hold data.
+Lastly, this section develops a script function called 'plotWord.m'. For this part, we created a  method for combining letters into cursive words.
+For example, our letters are A, B, F, I, and L; then it will be 'lab', 'ball' and more.
+For this function script, we consider using the 'containers.map' to hold data.
 Below is the function script for the PlotWord function.
 
 ```
 ```
 
-Code explaination:
-1. For our code we use `nargin` to checks if the number of input arguments is less than 1, meaning the function has been called without providing any input arguments.
+Code explanation:
+1. For our code, we use `nargin` to check if the number of input arguments is less than 1, meaning the function has been called without providing any input arguments.
 2. We assign `letterMap = containers.map` then define `containers.map`.
-3. For our letters we assign as a representation of points in array format, making it a convenient wway to express points or data in a compact form.
+3. For our letters, we assign a representation of points in array format, making it a convenient way to express points or data in a compact form.
 4. Set our array elements at [0 0]
 5. Using `for-loop` to loop through the letters and draw.
-6. For special character in our case is 'i', we use ` `
-7. ` t = 1:0.01:length(allX); ` to creates a time vector, `t` with ranging from 1 to the length of `allX` with a step size of 0.01. This vector is used as the time or independent variable for the interpolation.
+6. For the special character, in our case, 'i', we use ` `
+7. ` t = 1:0.01:length(allX); ` to create a time vector, `t` ranging from 1 to the length of `allX` with a step size of 0.01. This vector is used as the time or independent variable for the interpolation.
 For `interpolatedX` and `interpolatedY` contain the interpolated coordinates that can be used for plotting a smooth curve that represents the shape formed by the letters.
 8. Plot the data using `interpolatedX` and interpolatedY`.
 9. Customizing the appearance of the plot to ensure equal scaling on both axes and labelling the plotted data.
 
-Try code on input strings `plotWords('ball')` , it will give as the plot below (Figure 4):
+Try code on input strings `plotWords('ball')` , it will give the plot below (Figure 4):
 
 #### *Figure 4*
 ![](picturethree.jpg)
