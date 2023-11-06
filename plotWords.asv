@@ -64,7 +64,7 @@ for i = 1:length(Name)
 end 
 
 if ~isempty(dotPositions)
-    plot(dotPositions(:,1), dotPositions(:,2), 'bo', 'MarkerSize', 5, ...
+    plot(dosPositions(:,1), dotPositions(:,2), 'bo', 'MarkerSize', 5, ...
      'MarkerFaceColor', 'b');
 end
 
