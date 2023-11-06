@@ -75,11 +75,12 @@ interpolatedY = interp1(allY, t, 'spline');
 hold on;
 plot(interpolatedX, interpolatedY, 'b', 'LineWidth', 2);
 hold off; 
-grid on
 axis equal;
+grid on
 title(Name);
 xlabel('x');
 ylabel('y');
+set(gca, 'FontSize', 10, 'LineWidth', 1)
 grid on
 end 
 
