@@ -9,7 +9,7 @@
 % Define data points for x and y coordinates
 x1 = [2.75 3.25 3.375 3.125 3.375 3.75];
 y1 = [2.5 3 3.25 2.25 1.75 2.5];
-dot_x1 = 3.375;
+dot_x1 = 3.375; % for the dot on the i 
 dot_y1 = 3.625;
 
 % Define the amount of shift to the right (offset)
@@ -65,7 +65,7 @@ ylabel('y')
 set(gca, 'FontSize', 10, 'LineWidth', 1)
 grid on
 
-%% qil
+%% qila
 % LETTER Q
 % Define data points for x and y coordinates 
 x1 = [1.25 0.75 0.375 0.25 0.5 1 1.25 1 0.875 1 1.375 0.875 1.75];
@@ -75,7 +75,7 @@ y1 = [3.375 3.375 3 2.5 2.25 2.75 3.375 2.75 2 0.5 1.375 2 2.5];
 % Define data points for x and y coordinates
 x2 = [2.75 3.25 3.375 3.125 3.375 3.75];
 y2 = [2.5 3 3.25 2.25 1.75 2.5];
-dot_x = 2.375;
+dot_x = 2.375;    
 dot_y = 3.625;
 
 % Define the amount of shift to the left (offset)
