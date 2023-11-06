@@ -40,7 +40,7 @@ From our rough sketch, we can easily plot this in Matlab,
 below is an example of letter f (Figure 3):
 
 #### *Figure 3*
-![](untitled1.png) ![](fsketch.jpeg)
+![](untitled1.png)
 
 ### Digital Reconstruction
 
@@ -59,19 +59,6 @@ This is under the `plot settings` in the code.
 
 ```
 ```
-
-
-1. To understand it better, we first plotted individual letters instead of our full name
-2. section break to deal with each name 
-3. to make it less confusing in coding, we used x1, y1, x2, y2, ... for each name 
-[basically, for the name qila: x1, y1 and then bibi: x2, y2]
-4. to make sure each name comes out as different graph plots instead of one 
-[changed in the plot settings for each name]
-(basically figure 1, figure 2,...) 
-so it doesnt overlap with each other in ONE FIGURE 
-5. used the reference of the example provided ( the D cursive) 
-
-
 
 ### Creation Of The Plotword Function 
 
