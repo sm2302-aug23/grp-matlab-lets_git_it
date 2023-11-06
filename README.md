@@ -170,7 +170,7 @@ Code explanation:
 3. For our letters, we assign a representation of points in array format, making it a convenient way to express points or data in a compact form.
 4. Set our array elements at [0 0]
 5. Using `for-loop` to loop through the letters and draw.
-6. For the special character, in our case, 'i', we use ` `
+6. For the special character, in our case, 'i', we use `if` statement
 7. ` t = 1:0.01:length(allX); ` to create a time vector, `t` ranging from 1 to the length of `allX` with a step size of 0.01. This vector is used as the time or independent variable for the interpolation.
 For `interpolatedX` and `interpolatedY` contain the interpolated coordinates that can be used for plotting a smooth curve that represents the shape formed by the letters.
 8. Plot the data using `interpolatedX` and interpolatedY`.
