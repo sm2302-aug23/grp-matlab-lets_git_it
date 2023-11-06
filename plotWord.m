@@ -77,7 +77,7 @@ plot(interpolatedX, interpolatedY, 'b', 'LineWidth', 2);
 hold off; 
 
 axis equal;
-title('Name');
+title(Name);
 xlabel('x');
 ylabel('y');
 end 
