@@ -1,10 +1,267 @@
-# Group Assignment (MATLAB)
+# SM2302 - Group Assignment 2 (Let's Git It)
+## Spline Your Name 
 
-This repository contains instructions for SM-2302 MATLAB group assignment.
 
-The assignment is due on **Tuesday, 7 November 2023 at 12:00 PM**.
+| Student ID \# | Name            | Nickname |
+|---------------|-----------------|----------|
+| 22B2046       | Syafiqah Raddin | Syaf     |
+| 22B2125       | Izznie Adanan   | Izz      |
+| 22B2149       | Aqilah Rafidi   | Qila     |  
+| 22B9014       | Bibi Junaidi    | Bibi     |
 
-Understand the sample code given in the [`Group2-2023.pdf`](Group2-2023.pdf) document, and read the instructions carefully.
+## Table of Contents
 
-Read [`notes.md`](notes.md) for some advice on good MATLAB programming style and marking scheme.
+1.  [Graph Paper Transcription](#graph-paper-transcription)
+2.  [Digital Reconstruction](#digital-reconstruction)
+3.  [Creation Of The Plotword Function](#creation-of-the-plotword-function)
 
+### Graph Paper Transcription
+
+Initially, we did a rough sketch of our nicknames in cursive on a square plot. 
+We selected only 9 letters in this task, which are: a, b, f, i, l, q, s, y, and z.
+
+Additionally, we noted the exact coordinates from the rough sketch to be plotted on the square plot.
+Furthermore, each cursive letter starts and ends with the same y value, which in this case is y = 2.5. 
+This is to make sure when we plot our names, the letters would connect the way a cursive word would. 
+This a reminder that for what we have done so far, the coordinates are only important for their dimension for now, and we have not yet considered where the position of the letters will be in words (which will be handled in the later tasks).
+
+We can observe this from the rough sketch of the graph plot below in Figure 1 and Figure 2:
+
+#### *Figure 1*
+![](pictureone.jpeg)
+
+
+#### *Figure 2*
+![](picturetwo.jpeg)
+
+
+From our rough sketch, we can easily plot this in Matlab, referring to the individualLetters.m file with the help of the Dcursive.m file given, 
+
+below is an example of letter f (Figure 3):
+
+```r
+%% LETTER F
+% Define data points for x and y coordinates 
+x = [0.5 1 1.5 1.625 1.25 1 0.875 0.8125 1 1.25 1.17 0.875 1.625];
+y = [2.5 2.875 3.5 4.25 4.5 3.5 2.375 1.5 1.0625 1.5 2 2.375 2.5];
+
+n = length(x);
+t = 0:n-1; % Parametric coordinate t
+tt = 0:0.01:n-1; % More dense coordinate tt for spline interpolation
+
+% Compute spline interpolation
+xx = spline(t, x, tt);
+yy = spline(t, y, tt);
+
+% Plot settings
+figure(1)
+plot(xx, yy, 'k', 'LineWidth', 1.5) % plot spline
+hold on
+plot(x, y, 'bo', 'MarkerFaceColor', 'b') % plot data points
+axis([-0.2 6 -0.2 4.5])
+grid on
+title('Spline Interpolation of Cursive Letter F')
+xlabel('x')
+ylabel('y')
+set(gca, 'FontSize', 10, 'LineWidth', 1)
+grid on
+```
+for each letter, the only difference is to data points for the x and y coordinates and the title in the plot settings. 
+
+#### *Figure 3*
+![](untitled1.png)
+
+### Digital Reconstruction
+For this task, we now try to do a MatLab script file that would plot all of our spline cursive names (as words, not letters). In this, we are using subplots to arrange each name plot to be placed in the same figure. 
+
+In Figure 4, you can see an example, syaf. 
+
+```c
+%% syaf
+% letter s
+x1 = [1.25 0.75 0.5 0.75 1.375 0.75 0.375 1.75];
+y1 = [3.5 3.8 3.5 3 1.625 0.875 1.5 2.5];
+
+% letter y 
+x2 = [0.5 0.55 0.6 0.75 1 1.5 1.5 1.25 0.5 0.5 2.25];
+y2 = [2.5 2.55 2.6 2.75 2 2.75 1.5 0.5 0.25 1 2.5];
+
+% Define the amount of shift to the right (offset)
+x_shift2 = 1.25;
+
+% Apply the offset to x coordinates (horizontal) 
+x2 = x2 + x_shift2;
+
+% letter a
+x3 = [1 0.25 0.5 0.9 0.9 1 1 1 1 1.25 1.75];
+y3  = [3 2.5 1.75 2 2 2.5 3 2.5 2.25 1.75 2.5];
+
+% Define the amount of shift to the right (offset)
+x_shift3 = 3.25;
+
+% Apply the offset to x coordinates (horizontal) 
+x3 = x3 + x_shift3;
+
+% LETTER F
+% Define data points for x and y coordinates 
+x4 = [0.5 1 1.5 1.625 1.25 1 0.875 0.8125 1 1.25 1.17 0.875 1.625];
+y4 = [2.5 2.875 3.5 4.25 4.5 3.5 2.375 1.5 1.0625 1.5 2 2.375 2.5];
+
+% Define the amount of shift to the right (offset)
+x_shift4 = 4.5;
+
+% Apply the offset to x coordinates (horizontal) 
+x4 = x4 + x_shift4;
+
+% Concatenate data points
+x = [x1 x2 x3 x4];
+y = [y1 y2 y3 y4];
+
+n = length(x);
+t = 0:n-1; % Parametric coordinate t
+tt = 0:0.01:n-1; % More dense coordinate tt for spline interpolation
+
+% Compute spline interpolation
+xx = spline(t, x, tt);
+yy = spline(t, y, tt);
+
+% Plot settings
+figure(3)
+plot(xx, yy, 'k', 'LineWidth', 1.5) % plot spline
+hold on
+plot(x, y, 'bo', 'MarkerFaceColor', 'b') % plot data points
+axis([-0.2 7 -0.2 5])
+grid on
+title('Spline Interpolation of Cursive Syaf')
+xlabel('x')
+ylabel('y')
+set(gca, 'FontSize', 10, 'LineWidth', 1)
+grid on
+
+```
+#### *Figure 4*
+![](syaf.png)
+
+Code explanation for names.m file: 
+
+1. To better see each name, we used the %% function in Matlab to section break between all our nicknames.   
+2. When computing a name, to make it less confusing and also to avoid the plot (X, Y) to overlap with other letters in the graph plot, 
+we let (X, Y) be (X1, Y1), (X2, Y2), ..., (Xn, Yn) for each letter in each name.  
+For example, for the name qila, the letter q would be (X1, Y1) and then the letter i would be (X2, Y2) and so on. 
+3. Moreover, to make sure each name will come out as different graph plots (different figures)
+instead of all the names running on one graph plot (one figure), we changed the title, figure numbers
+and also the (X, Y) axis so it can show better. Basically, each member is named Figure 1, figure 2 and more.
+This is under the `plot settings` in the code. 
+
+
+### Creation Of The Plotword Function 
+
+Lastly, this section develops a script function called 'plotWord.m'. For this part, we created a  method for combining letters into cursive words.
+For example, our letters are A, B, F, I, and L; then it will be 'lab', 'ball' and more.
+For this function script, we consider using the 'containers.map' to hold data.
+Below is the function script for the PlotWord function.
+
+```c
+function plotWord(Name)
+if nargin < 1 
+  error('Please provide a name to plot.');  
+end 
+
+% Define a comtainer map to store letters and their instructions 
+letterMap = containers.Map('KeyType', 'char', 'ValueType', 'any');
+
+% Define instructions for each letter in your name 
+% You can define the instructions as a series of (x,y) coordinates 
+letterMap('a') = [1 3; 0.25 2.5; 0.5 1.75; 0.9 2; 0.9 2; 1 2.5; 1 3; 
+    1 2.5; 1 2.25; 1.25 1.75;1.75 2.5];
+letterMap('b') = [0.5 2.5; 1.125 3.25; 1.75 4.25; 1.625 5.25; 1.25 2.5; 
+    1.75 3.25; 2 2; 1.375 1.5; 1.125 2; 2.75 2.5];
+letterMap('f') = [0.5 2.5; 1 2.875; 1.5 3.5; 1.625 4.25; 1.25 4.5; 1 3.5; 
+    0.875 2.375; 0.8125 1.5; 1 1.0625; 1.25 1.5; 1.17 2; 0.875 2.375; 
+    1.625 2.5];
+letterMap('i') = [2.75 2.5; 3.25 3; 3.375 3.25; 3.125 2.25; 
+    3.375 1.75; 3.75 2.5];
+letterMap('l') = [0.25 2.50; 1 3.375; 1.625 3.875; 1.75 4.5; 
+    1.50 4.875; 1.125 4.25; 1 3.375; 1.125 2.125; 1.375 1.8125;
+     1.75 2.5];
+letterMap('q') = [1.25 3.375; 0.75 3.375; 0.375 3; 0.25 2.5; 0.5 2.25; 
+    1 2.75; 1.25 3.375; 1 2.75; 0.875 2; 1 0.5; 1.375 1.375; 0.875 2; 
+    1.75 2.5];
+letterMap('s') = [1.25 3.5; 0.75 3.8; 0.5 3.5; 0.75 3; 1.375 1.625; 
+    0.75 0.875; 0.375 1.5; 1.75 2.5];
+letterMap('y') = [0.5 2.5; 0.55 2.55; 0.6 2.6; 0.75 2.75; 1 2; 
+    1.5 2.75; 1.5 1.5; 1.25 0.5; 0.5 0.25; 0.5 1; 2.25 2.5];
+letterMap('z') = [0.25 2.5; 1.25 3; 1 2.5; 0.75 2; 1.5 2; 0.5 0.5; 0.75 1;
+    1.5 1.75; 2.25 2.5];
+
+currentPosition = [0 0]; 
+allX = [];
+allY =[];
+
+% Initialize dotPositions outside the loop
+dotPositions = zeros(0,2);
+
+% Loop through the letters in your name and draw 
+for i = 1:length(Name)
+    letter = (Name(i)); 
+    if isKey(letterMap, letter)
+        instructions = letterMap(letter);
+        instructions(:,1) = instructions(:,1) + currentPosition(1);
+        instructions(:,2) = instructions(:,2) + currentPosition(2);
+        allX = [allX; instructions(:,1)];
+        allY = [allY; instructions(:,2)];
+
+        if i < length(Name)
+        currentPosition(1) = max(instructions(:,1)), + 0.1;
+        end
+
+        if letter == 'i'
+            [~, highestPointIndex] = max(instructions(:,2));
+            dotPosition = instructions(highestPointIndex, :);
+            dotPosition(1) = dotPosition(1) + 0.1;
+            dotPosition(2) = dotPosition(2) + 0.4;
+            dotPositions = [dotPositions; dotPosition];
+            end
+    else
+        fprintf('Letter "%s" is not defined.\n', letter);
+    end
+end 
+
+if ~isempty(dotPositions)
+    plot(dotPositions(:,1), dotPositions(:,2), 'bo', 'MarkerSize', 5, ...
+     'MarkerFaceColor', 'b');
+end
+
+t = 1:0.01:length(allX);
+interpolatedX = interp1(allX, t, 'spline');
+interpolatedY = interp1(allY, t, 'spline');
+
+hold on;
+plot(interpolatedX, interpolatedY, 'b', 'LineWidth', 2);
+hold off; 
+axis equal;
+grid on
+title(Name);
+xlabel('x');
+ylabel('y');
+set(gca, 'FontSize', 10, 'LineWidth', 1)
+grid on
+end
+```
+
+Code explanation:
+1. For our code, we use `nargin` to check if the number of input arguments is less than 1, meaning the function has been called without providing any input arguments.
+2. We assign `letterMap = containers.map` then define `containers.map`.
+3. For our letters, we assign a representation of points in array format, making it a convenient way to express points or data in a compact form.
+4. Set our array elements at [0 0]
+5. Using `for-loop` to loop through the letters and draw.
+6. For the special character, in our case, 'i', we use `if` statement for the dot on 'i'.
+7. ` t = 1:0.01:length(allX); ` to create a time vector, `t` ranging from 1 to the length of `allX` with a step size of 0.01. This vector is used as the time or independent variable for the interpolation.
+For `interpolatedX` and `interpolatedY` contain the interpolated coordinates that can be used for plotting a smooth curve that represents the shape formed by the letters.
+8. Plot the data using `interpolatedX` and interpolatedY`.
+9. Customizing the appearance of the plot to ensure equal scaling on both axes and labelling the plotted data.
+
+Try code on input strings `plotWords('ball')` , it will give the plot below (Figure 5):
+
+#### *Figure 5*
+![](figurethree.png)
