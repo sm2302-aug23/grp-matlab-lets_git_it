@@ -44,7 +44,7 @@ xx = spline(t, x, tt);
 yy = spline(t, y, tt);
 
 % Plot settings
-figure(1)
+figure(2)
 plot(xx, yy, 'k', 'LineWidth', 1.5) % plot spline
 hold on
 plot(x, y, 'bo', 'MarkerFaceColor', 'b') % plot data points
@@ -72,7 +72,7 @@ xx = spline(t, x, tt);
 yy = spline(t, y, tt);
 
 % Plot settings
-figure(1)
+figure(3)
 plot(xx, yy, 'k', 'LineWidth', 1.5) % plot spline
 hold on
 plot(x, y, 'bo', 'MarkerFaceColor', 'b') % plot data points
@@ -98,7 +98,7 @@ xx = spline(t, x, tt);
 yy = spline(t, y, tt);
 
 % Plot settings
-figure(1)
+figure(4)
 plot(xx, yy, 'k', 'LineWidth', 1.5) % plot spline
 hold on
 plot(x, y, 'bo', 'MarkerFaceColor', 'b') % plot data points
@@ -125,7 +125,7 @@ xx = spline(t, x, tt);
 yy = spline(t, y, tt);
 
 % Plot settings
-figure(1)
+figure(5)
 plot(xx, yy, 'k', 'LineWidth', 1.5) % plot spline
 hold on
 plot(x, y, 'bo', 'MarkerFaceColor', 'b') % plot data points
@@ -154,7 +154,7 @@ xx = spline(t, x, tt);
 yy = spline(t, y, tt);
 
 % Plot settings
-figure(1)
+figure(6)
 plot(xx, yy, 'k', 'LineWidth', 1.5) % plot spline
 hold on
 plot(x, y, 'bo', 'MarkerFaceColor', 'b') % plot data points
@@ -180,7 +180,7 @@ xx = spline(t, x, tt);
 yy = spline(t, y, tt);
 
 % Plot settings
-figure(1)
+figure(7)
 plot(xx, yy, 'k', 'LineWidth', 1.5) % plot spline
 hold on
 plot(x, y, 'bo', 'MarkerFaceColor', 'b') % plot data points
@@ -206,7 +206,7 @@ xx = spline(t, x, tt);
 yy = spline(t, y, tt);
 
 % Plot settings
-figure(1)
+figure(8)
 plot(xx, yy, 'k', 'LineWidth', 1.5) % plot spline
 hold on
 plot(x, y, 'bo', 'MarkerFaceColor', 'b') % plot data points
@@ -234,7 +234,7 @@ xx = spline(t, x, tt);
 yy = spline(t, y, tt);
 
 % Plot settings
-figure(1)
+figure(9)
 plot(xx, yy, 'k', 'LineWidth', 1.5) % plot spline
 hold on
 plot(x, y, 'bo', 'MarkerFaceColor', 'b') % plot data points
